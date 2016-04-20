@@ -9,6 +9,7 @@ namespace ShoppingBasketForm
     {
         /// <summary>
         /// The main entry point for the application.
+        /// This is a test.
         /// </summary>
         [STAThread]
         static void Main()
