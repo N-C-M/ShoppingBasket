@@ -20,6 +20,7 @@ namespace ShoppingBasketForm
         }
         private void RenderItems()
         {
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             txtNoItems.Text = basket.NumberOfItems.ToString();
             txtTotalValue.Text = basket.BasketTotal.ToString("C2");
 
@@ -109,10 +110,6 @@ namespace ShoppingBasketForm
             {
                 MessageBox.Show(sfd.FileName);
                 basket.SaveBasket(sfd.FileName);
-            }
-            else if (basket.OrderItems == null)
-            {
-                MessageBox.Show("There is nothing to save!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
