@@ -10,6 +10,7 @@ namespace QA.ShoppingBasket
         public string ProductName { get; private set; }
         public decimal LatestPrice { get; set; }
         public int Quantity { get; set; }
+
         public decimal TotalOrder
         {
             get { return LatestPrice * Quantity; }
@@ -21,6 +22,7 @@ namespace QA.ShoppingBasket
             LatestPrice = latestPrice;
             Quantity = quantity;
         }
+
         public OrderItem(string prodname, decimal latestPrice) : this(prodname, latestPrice, 1) { }
 
         public int AddItems(decimal latestPrice, int qty)
@@ -30,11 +32,13 @@ namespace QA.ShoppingBasket
             return Quantity;
 
         }
+
         public int AddItems(int qty)
         {
             Quantity += qty;
             return Quantity;
         }
+
         public int AddItem()
         {
             return ++Quantity;
@@ -52,6 +56,7 @@ namespace QA.ShoppingBasket
             }
             return Quantity;
         }
+
         public int RemoveItem()
         {
             if (Quantity > 0)
