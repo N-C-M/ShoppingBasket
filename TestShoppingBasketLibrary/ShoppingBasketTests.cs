@@ -28,7 +28,7 @@ namespace TestShoppingBasketLibrary
             bool expected = true, actual = false;
 
             Basket.AddProduct(name, price, quantity);
-            if (Basket.OrderItems[0].Quantity == 3)
+            if (Basket.OrderItems[0].Quantity == 4)
             {
                 actual = true;
             }

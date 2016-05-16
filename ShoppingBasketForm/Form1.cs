@@ -126,5 +126,16 @@ namespace ShoppingBasketForm
                 this.Close();
             }
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About a = new About();
+
+            DialogResult dr = a.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                RenderItems();
+            }
+        }
     }
 }
