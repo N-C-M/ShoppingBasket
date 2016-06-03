@@ -143,6 +143,7 @@
             // 
             this.txtNoItems.Location = new System.Drawing.Point(70, 354);
             this.txtNoItems.Name = "txtNoItems";
+            this.txtNoItems.ReadOnly = true;
             this.txtNoItems.Size = new System.Drawing.Size(100, 20);
             this.txtNoItems.TabIndex = 10;
             // 
@@ -150,6 +151,7 @@
             // 
             this.txtTotalValue.Location = new System.Drawing.Point(242, 354);
             this.txtTotalValue.Name = "txtTotalValue";
+            this.txtTotalValue.ReadOnly = true;
             this.txtTotalValue.Size = new System.Drawing.Size(100, 20);
             this.txtTotalValue.TabIndex = 11;
             // 
@@ -234,7 +236,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 

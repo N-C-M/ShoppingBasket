@@ -29,6 +29,7 @@ namespace ShoppingBasketForm
 
         public EditValue()
         {
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
         }
 
