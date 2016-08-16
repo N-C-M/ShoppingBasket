@@ -134,7 +134,7 @@ namespace ShoppingBasketForm
             DialogResult r = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.Yes)
             {
-                this.Close();
+                Environment.Exit(0);
             }
         }
 
@@ -147,6 +147,20 @@ namespace ShoppingBasketForm
             {
                 RenderItems();
             }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Are you sure you want to exit the app?", "Exit", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (r == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                return;
+            } 
         }
     }
 }
