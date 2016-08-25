@@ -16,11 +16,13 @@ namespace ShoppingBasketForm
             get { return txtProdName.Text; }
             set { txtProdName.Text = value; }
         }
+
         public int Quantity
         {
             get { return System.Convert.ToInt32(txtQty.Text); }
             set { txtQty.Text = value.ToString(); }
         }
+
         public decimal LatestPrice
         {
             get { return System.Convert.ToDecimal(txtLatestPrice.Text); }

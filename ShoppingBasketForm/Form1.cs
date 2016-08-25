@@ -18,6 +18,7 @@ namespace ShoppingBasketForm
         {
             InitializeComponent();
         }
+
         private void RenderItems()
         {
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -38,6 +39,11 @@ namespace ShoppingBasketForm
 
         }
 
+        /// <summary>
+        /// This method is used when adding a product to the basket.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             decimal value;
@@ -52,6 +58,11 @@ namespace ShoppingBasketForm
             RenderItems();
         }
 
+        /// <summary>
+        /// This method is used when removing a product from the basket.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if (lbItems.SelectedIndex >= 0)
@@ -67,6 +78,11 @@ namespace ShoppingBasketForm
             }
         }
 
+        /// <summary>
+        /// This method is used when you are wanting to edit an exsisting product in the basket.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
             EditValue ev = new EditValue();
@@ -94,6 +110,11 @@ namespace ShoppingBasketForm
             }
         }
 
+        /// <summary>
+        /// This method is used to clear our exsisting products in the basket.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClear_Click(object sender, EventArgs e)
         {  
             // needs updating
@@ -105,6 +126,11 @@ namespace ShoppingBasketForm
             MessageBox.Show("Basket has been emptied", "Basket Cleared", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// This method is used when you want to save the basket to a .txt file e.g. a receipt.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
@@ -129,6 +155,11 @@ namespace ShoppingBasketForm
             RenderItems();
         }
 
+        /// <summary>
+        /// This method is used when you want to exit out of the application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -138,6 +169,11 @@ namespace ShoppingBasketForm
             }
         }
 
+        /// <summary>
+        /// This method is used to open the about form from the tool strip menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             About a = new About();
@@ -149,18 +185,27 @@ namespace ShoppingBasketForm
             }
         }
 
+        /// <summary>
+        /// This method overrides the defualt settings for the application exit funtion.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            DialogResult r = MessageBox.Show("Are you sure you want to exit the app?", "Exit", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            base.OnFormClosing(e);
 
-            if (r == DialogResult.Yes)
+            if (e.CloseReason == CloseReason.ApplicationExitCall)
             {
                 Environment.Exit(0);
             }
-            else
+
+            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
             {
-                return;
-            } 
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
