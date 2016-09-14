@@ -11,11 +11,20 @@ namespace QA.ShoppingBasket
         public decimal LatestPrice { get; set; }
         public int Quantity { get; set; }
 
+        /// <summary>
+        /// Multiplies the latest price by the quantity of the product.
+        /// </summary>
         public decimal TotalOrder
         {
             get { return LatestPrice * Quantity; }
         }
 
+        /// <summary>
+        /// Assigns the input strings to there respective properties.
+        /// </summary>
+        /// <param name="prodname"></param>
+        /// <param name="latestPrice"></param>
+        /// <param name="quantity"></param>
         public OrderItem(string prodname, decimal latestPrice, int quantity)
         {
             ProductName = prodname;
@@ -25,6 +34,12 @@ namespace QA.ShoppingBasket
 
         public OrderItem(string prodname, decimal latestPrice) : this(prodname, latestPrice, 1) { }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="latestPrice"></param>
+        /// <param name="qty"></param>
+        /// <returns></returns>
         public int AddItems(decimal latestPrice, int qty)
         {
             Quantity += qty;

@@ -19,6 +19,9 @@ namespace ShoppingBasketForm
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Creates and adds an item to a data grid.
+        /// </summary>
         private void RenderItems()
         {
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -34,9 +37,7 @@ namespace ShoppingBasketForm
                   string.Format("{0,-15}{1,4}{2,10:C2}{3,10:C2}",
                   item.ProductName, item.Quantity, item.LatestPrice, item.TotalOrder));
                 }
-
             }
-
         }
 
         /// <summary>
@@ -106,7 +107,6 @@ namespace ShoppingBasketForm
                 {
                     MessageBox.Show("Please select a row to edit", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 
@@ -150,6 +150,11 @@ namespace ShoppingBasketForm
             }
         }
 
+        /// <summary>
+        /// Calls the method that creates the data grid. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             RenderItems();

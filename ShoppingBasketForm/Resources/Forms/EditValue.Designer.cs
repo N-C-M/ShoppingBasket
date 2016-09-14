@@ -63,12 +63,12 @@
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Latest Price";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtLatestPrice
             // 
             this.txtLatestPrice.Location = new System.Drawing.Point(102, 114);
             this.txtLatestPrice.Name = "txtLatestPrice";
+            this.txtLatestPrice.ReadOnly = true;
             this.txtLatestPrice.Size = new System.Drawing.Size(148, 20);
             this.txtLatestPrice.TabIndex = 3;
             // 
@@ -124,6 +124,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "EditValue";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditValue";
             this.Load += new System.EventHandler(this.EditValue_Load);
             this.ResumeLayout(false);

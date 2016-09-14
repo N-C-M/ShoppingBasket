@@ -11,12 +11,20 @@ namespace ShoppingBasketForm
 {
     public partial class About : Form
     {
+        /// <summary>
+        /// Initializing the About form.
+        /// </summary>
         public About()
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.FixedSingle;  
         }
 
+        /// <summary>
+        /// Returning the cancel value when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClose_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;

@@ -16,6 +16,11 @@ namespace ShoppingBasketForm
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Method to process and update the progress bar for the application splash screen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             Form1 frm = new Form1();
