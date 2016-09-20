@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingBasketForm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace ShoppingBasketForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSplashScreen());
+            Application.Run(new frmSplash());
         }
     }
 }

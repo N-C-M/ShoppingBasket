@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.btnClose = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,23 +46,14 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 164);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Designed and developed by Nathan Moore";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(98, 177);
+            this.label2.Location = new System.Drawing.Point(11, 168);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.Size = new System.Drawing.Size(260, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Copyright 2016©";
+            this.label2.Text = "Copyright © 2016 Nathan Moore, All Rights Reserved";
             // 
             // label3
             // 
@@ -76,12 +67,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ShoppingBasketForm.Properties.Resources.commerce_ecommerce_basket_shop;
-            this.pictureBox1.Location = new System.Drawing.Point(67, 12);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(74, 37);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 128);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.Size = new System.Drawing.Size(129, 124);
+            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // About
@@ -92,7 +82,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.MaximizeBox = false;
             this.Name = "About";
@@ -106,7 +95,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
