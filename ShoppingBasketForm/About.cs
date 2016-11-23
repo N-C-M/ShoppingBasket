@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ShoppingBasketForm
 {
-    public partial class About : Form
+    public partial class About : MaterialSkin.Controls.MaterialForm
     {
         /// <summary>
         /// Initializing the About form.
@@ -27,7 +27,7 @@ namespace ShoppingBasketForm
         /// <param name="e"></param>
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

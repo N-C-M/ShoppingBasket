@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ShoppingBasketForm
 {
-    public partial class EditValue : Form
+    public partial class EditValue : MaterialSkin.Controls.MaterialForm
     {
         /// <summary>
         /// Setting the ProdName property to the value of txtProdName.
@@ -43,7 +43,6 @@ namespace ShoppingBasketForm
         /// </summary>
         public EditValue()
         {
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
         }
 

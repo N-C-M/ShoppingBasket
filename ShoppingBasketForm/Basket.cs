@@ -7,16 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using QA.ShoppingBasket;
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace ShoppingBasketForm
 {
-    public partial class Form1 : Form
+    public partial class Basket : MaterialForm
     {
         private ShoppingBasket basket = new ShoppingBasket();
 
-        public Form1()
+        public Basket()
         {
             InitializeComponent();
+
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
         /// <summary>
@@ -24,7 +31,6 @@ namespace ShoppingBasketForm
         /// </summary>
         private void RenderItems()
         {
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             txtNoItems.Text = basket.NumberOfItems.ToString();
             txtTotalValue.Text = basket.BasketTotal.ToString("C2");
 
@@ -45,7 +51,7 @@ namespace ShoppingBasketForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void add_Button_Click(object sender, EventArgs e)
         {
             decimal value;
             if (decimal.TryParse(txtLatestPrice.Text, out value))
@@ -59,12 +65,13 @@ namespace ShoppingBasketForm
             RenderItems();
         }
 
+
         /// <summary>
         /// This method is used when removing a product from the basket.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnRemove_Click(object sender, EventArgs e)
+        private void remove_Button_Click(object sender, EventArgs e)
         {
             if (lbItems.SelectedIndex >= 0)
             {
@@ -84,7 +91,7 @@ namespace ShoppingBasketForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void edit_Button_Click(object sender, EventArgs e)
         {
             EditValue ev = new EditValue();
             if (lbItems.SelectedIndex >= 0)
@@ -115,23 +122,22 @@ namespace ShoppingBasketForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnClear_Click(object sender, EventArgs e)
-        {  
-            // needs updating
+        private void clearbasket_Button_Click(object sender, EventArgs e)
+        {
             basket.OrderItems.Clear();
             RenderItems();
-            txtProdName.Text = "";
+            txtProdName.Text = ""; ;
             txtLatestPrice.Text = "";
             numQty.Value = 0;
             MessageBox.Show("Basket has been emptied", "Basket Cleared", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+        } 
 
         /// <summary>
         /// This method is used when you want to save the basket to a .txt file e.g. a receipt.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSave_Click(object sender, EventArgs e)
+        private void save_Button_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "Text Files (*.txt)|*.txt";
@@ -146,9 +152,9 @@ namespace ShoppingBasketForm
             {
                 MessageBox.Show(sfd.FileName);
                 basket.SaveBasket(sfd.FileName);
-                
+
             }
-        }
+        } 
 
         /// <summary>
         /// Calls the method that creates the data grid. 
@@ -165,14 +171,14 @@ namespace ShoppingBasketForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnExit_Click(object sender, EventArgs e)
+        private void exit_Button_Click(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.Yes)
             {
-                Environment.Exit(0);
+                this.Close();
             }
-        }
+        }  
 
         /// <summary>
         /// This method is used to open the about form from the tool strip menu.
@@ -191,26 +197,15 @@ namespace ShoppingBasketForm
         }
 
         /// <summary>
-        /// This method overrides the defualt settings for the application exit funtion.
+        /// This method allows the end user to correctly terminate the application using the ribbon exit icon by sending the correct exit code.
         /// </summary>
+        /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        private void Basket_FormClosing(object sender, FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.ApplicationExitCall)
-            {
-                Environment.Exit(0);
-            }
-
-            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
-            {
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
-                    break;
-            }
-        }
+            Environment.Exit(0);
+        }  
     }
 }
+
+

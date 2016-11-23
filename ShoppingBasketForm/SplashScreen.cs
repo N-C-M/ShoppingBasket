@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace ShoppingBasketForm
 {
-    public partial class frmSplash : Form
+    public partial class SplashScreen : Form
     {
         Timer t = new Timer();
-        Form1 frm = new Form1();
+        Basket frm = new Basket();
         //pb = ProgressBar
         double pbUnit;
         int pbWIDTH, pbHEIGHT, pbComplete;
@@ -20,7 +20,7 @@ namespace ShoppingBasketForm
         Bitmap bmp;
         Graphics g;
 
-        public frmSplash()
+        public SplashScreen()
         {
             InitializeComponent();
         }
@@ -57,7 +57,7 @@ namespace ShoppingBasketForm
             g.FillRectangle(Brushes.MediumPurple, new Rectangle(0, 0, (int)(pbComplete * pbUnit), pbHEIGHT));
 
             //draw % complete
-            g.DrawString(pbComplete + "%", new Font("Arial", pbHEIGHT / 2), Brushes.Black, new PointF(pbWIDTH / 2 - pbHEIGHT, pbHEIGHT / 10));
+            g.DrawString(pbComplete + "%", new Font("Arial", pbHEIGHT / 2), Brushes.AliceBlue, new PointF(pbWIDTH / 2 - pbHEIGHT, pbHEIGHT / 10));
 
             //load bitmap in picturebox picboxPB
             picboxPB.Image = bmp;

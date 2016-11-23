@@ -79,7 +79,6 @@ namespace QA.ShoppingBasket
                 Quantity--;
             }
             return Quantity;
-        }
-        
+        }     
     }
 }

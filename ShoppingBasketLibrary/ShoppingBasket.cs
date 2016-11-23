@@ -150,7 +150,7 @@ namespace QA.ShoppingBasket
 
         public void SaveBasket(string fileName)
         {
-            using (StreamWriter sw = new StreamWriter(File.Open(fileName,FileMode.Create,FileAccess.Write)))
+            using (StreamWriter sw = new StreamWriter(File.Open(fileName, FileMode.Create, FileAccess.Write)))
             {
                 foreach (OrderItem item in OrderItems)
                 {

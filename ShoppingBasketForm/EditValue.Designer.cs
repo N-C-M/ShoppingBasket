@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 48);
+            this.label1.Location = new System.Drawing.Point(12, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // txtProdName
             // 
-            this.txtProdName.Location = new System.Drawing.Point(102, 48);
+            this.txtProdName.Location = new System.Drawing.Point(102, 82);
             this.txtProdName.Name = "txtProdName";
             this.txtProdName.ReadOnly = true;
             this.txtProdName.Size = new System.Drawing.Size(148, 20);
@@ -59,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 114);
+            this.label2.Location = new System.Drawing.Point(12, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // txtLatestPrice
             // 
-            this.txtLatestPrice.Location = new System.Drawing.Point(102, 114);
+            this.txtLatestPrice.Location = new System.Drawing.Point(102, 152);
             this.txtLatestPrice.Name = "txtLatestPrice";
             this.txtLatestPrice.ReadOnly = true;
             this.txtLatestPrice.Size = new System.Drawing.Size(148, 20);
@@ -75,7 +75,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(12, 166);
+            this.btnOk.Location = new System.Drawing.Point(12, 194);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(100, 34);
             this.btnOk.TabIndex = 4;
@@ -86,7 +86,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(172, 166);
+            this.btnCancel.Location = new System.Drawing.Point(172, 194);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 34);
             this.btnCancel.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             // txtQty
             // 
-            this.txtQty.Location = new System.Drawing.Point(102, 81);
+            this.txtQty.Location = new System.Drawing.Point(102, 114);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(148, 20);
             this.txtQty.TabIndex = 7;
@@ -103,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 81);
+            this.label3.Location = new System.Drawing.Point(12, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 6;
